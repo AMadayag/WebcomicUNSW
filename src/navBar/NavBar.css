@@ -3,6 +3,7 @@
   width: 100vw;
 }
 
+/* gonna change the way the padding of the buttons works probably */
 .nav-bar {
   height: 8vh;
   width: 100vw;
@@ -28,8 +29,8 @@ button {
 
 .directory-container {
   display: flex;
-  padding-left: 12vw;
-  padding-right: 34vw;
+  padding-left: 8vw;
+  padding-right: 32vw;
 }
 
 .directory-btns {

@@ -5,11 +5,15 @@
 import './App.css'
 import './navBar/NavBar'
 import NavBar from './navBar/NavBar'
+import HomePage from './homePage/homePage'
 
 function App() {
 
   return (
+    <>
       <NavBar />
+      <HomePage />
+    </>
   )
 }
 
