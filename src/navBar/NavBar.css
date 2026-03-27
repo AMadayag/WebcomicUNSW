@@ -1,0 +1,48 @@
+.page-container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.nav-bar {
+  height: 8vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.home-btn {
+  width: 35vw;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bolder;
+  letter-spacing: 0.8vw;
+}
+
+.directory-container {
+  display: flex;
+  padding-left: 12vw;
+  padding-right: 34vw;
+}
+
+.directory-btns {
+  color: rgb(235, 235, 235);
+  width: 6vw;
+}
+
+.social-container{
+  display: flex;
+}
+
+.social-btns {
+  color: rgb(211, 211, 211);
+  width: 3vw;
+  font-size: larger;
+}
