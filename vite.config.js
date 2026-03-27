@@ -10,3 +10,5 @@ export default defineConfig({
     babel({ presets: [reactCompilerPreset()] })
   ],
 })
+
+// to deploy: npm run build && npx gh-pages -d dist
