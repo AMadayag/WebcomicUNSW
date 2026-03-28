@@ -16,12 +16,26 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  background-color: rgb(75, 75, 75);
+}
+
 .home-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 35vw;
   color: white;
   font-family: sans-serif;
   font-weight: bolder;
   letter-spacing: 0.8vw;
+  text-decoration: none;
+  background-color: black;
+  cursor: pointer;
+}
+
+.home-btn:hover {
+  background-color: rgb(75, 75, 75);
 }
 
 .directory-container {
@@ -31,8 +45,20 @@ button {
 }
 
 .directory-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: rgb(235, 235, 235);
+  font-family: sans-serif;
+  font-size: small;
   width: 6vw;
+  text-decoration: none;
+  background-color: black;
+  cursor: pointer;
+}
+
+.directory-btns:hover {
+  background-color: rgb(75, 75, 75);
 }
 
 .social-container{
