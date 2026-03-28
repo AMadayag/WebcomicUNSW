@@ -1,0 +1,45 @@
+.gallery-container {
+  height: 92vh;
+  overflow-y: auto;
+  width: 90vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+}
+
+.vertical-row-text {
+  padding-left: 3vw;
+  padding-right: 2vw;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 15vw;
+  gap: 2vh;
+  font-family: sans-serif;
+  text-align: left;
+}
+
+.vertical-row {
+  padding-top: 2vh;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 20vw;
+  gap: 2vh;
+}
+
+.gallery-img {
+  width: 100%;
+  opacity: 100%;
+}
+
+.gallery-img:hover {
+  opacity: 70%;
+  cursor: pointer;
+}

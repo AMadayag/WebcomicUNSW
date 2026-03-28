@@ -1,13 +1,13 @@
 import './App.css'
 import NavBar from './navBar/NavBar'
-// import HomePage from './homePage/HomePage'
+import Gallery from './gallery/Gallery'
 
 function App() {
 
   return (
     <>
       <NavBar />
-      {/* <HomePage /> */}
+      <Gallery />
     </>
   )
 }

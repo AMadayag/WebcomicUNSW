@@ -1,10 +1,7 @@
-.page-container {
-  height: 100vh;
-  width: 100vw;
-}
-
 /* gonna change the way the padding of the buttons works probably */
 .nav-bar {
+  position: sticky;
+  top: 0px;
   height: 8vh;
   width: 100vw;
   background-color: black;

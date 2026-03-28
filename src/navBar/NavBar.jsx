@@ -14,25 +14,23 @@ function NavBar() {
   }
 
   return (
-    <div className='page-container'>
-      <div className='nav-bar'>
-        {/* buttons on navbar */}
-        <button className='home-btn'>UNSW WEBCOMIC SOCIETY</button>
-        <div className='directory-container'>
-          <button className='directory-btns'>Gallery</button>
-          <button className='directory-btns'>Blog</button>
-          <button className='directory-btns'>About Us</button>
-        </div>
-        <div className='social-container'>
-          <button
-            className='social-btns'><FaDiscord
-            onClick={handleDiscordClick}
-          /></button>
-          <button
-            className='social-btns'
-            onClick={handleInstagramClick}
-          ><FaInstagram /></button>
-        </div>
+    <div className='nav-bar'>
+      {/* buttons on navbar */}
+      <button className='home-btn'>UNSW WEBCOMIC SOCIETY</button>
+      <div className='directory-container'>
+        <button className='directory-btns'>Gallery</button>
+        <button className='directory-btns'>Blog</button>
+        <button className='directory-btns'>About Us</button>
+      </div>
+      <div className='social-container'>
+        <button
+          className='social-btns'><FaDiscord
+          onClick={handleDiscordClick}
+        /></button>
+        <button
+          className='social-btns'
+          onClick={handleInstagramClick}
+        ><FaInstagram /></button>
       </div>
     </div>
   )
