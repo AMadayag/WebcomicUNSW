@@ -19,9 +19,9 @@ function NavBar() {
       {/* buttons on navbar */}
       <NavLink to='/WebcomicUNSW' className='home-btn'>UNSW WEBCOMIC SOCIETY</NavLink>
       <div className='directory-container'>
-        <NavLink to='/WebcomicUNSW/gallery' className='directory-btns'>Gallery</NavLink>
-        <NavLink to='/WebcomicUNSW/blog' className='directory-btns'>Blog</NavLink>
-        <NavLink to='/WebcomicUNSW/about-us' className='directory-btns'>About Us</NavLink>
+        <NavLink to='/gallery' className='directory-btns'>Gallery</NavLink>
+        <NavLink to='/blog' className='directory-btns'>Blog</NavLink>
+        <NavLink to='/about-us' className='directory-btns'>About Us</NavLink>
       </div>
       <div className='social-container'>
         <button

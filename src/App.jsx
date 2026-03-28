@@ -10,8 +10,8 @@ function App() {
     <>
       <NavBar />
       <Routes>
-        <Route path="/WebcomicUNSW" element={<WCHome />} />
-        <Route path="/WebcomicUNSW/gallery" element={<Gallery />} />
+        <Route path="/" element={<WCHome />} />
+        <Route path="/gallery" element={<Gallery />} />
       </Routes>
     </>
   )
