@@ -17,7 +17,7 @@ function NavBar() {
   return (
     <div className='nav-bar'>
       {/* buttons on navbar */}
-      <NavLink to='/WebcomicUNSW' className='home-btn'>UNSW WEBCOMIC SOCIETY</NavLink>
+      <NavLink to='/' className='home-btn'>UNSW WEBCOMIC SOCIETY</NavLink>
       <div className='directory-container'>
         <NavLink to='/gallery' className='directory-btns'>Gallery</NavLink>
         <NavLink to='/blog' className='directory-btns'>Blog</NavLink>
