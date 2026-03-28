@@ -1,6 +1,6 @@
 import './App.css'
 import NavBar from './navBar/NavBar'
-import HomePage from './homePage/homePage'
+import WCHome from './WCHome/WCHome.jsx';
 import Gallery from './gallery/Gallery'
 import { Routes, Route } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ function App() {
     <>
       <NavBar />
       <Routes>
-        <Route path="/WebcomicUNSW" element={<HomePage />} />
+        <Route path="/WebcomicUNSW" element={<WCHome />} />
         <Route path="/WebcomicUNSW/gallery" element={<Gallery />} />
       </Routes>
     </>
