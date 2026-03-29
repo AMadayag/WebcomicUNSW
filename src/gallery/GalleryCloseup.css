@@ -1,0 +1,52 @@
+.closeup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 92vh;
+  width: 100vw;
+}
+
+img {
+  height: 90%;
+  max-width: 90%;
+}
+
+.button {
+  position: absolute;
+  margin-left: 95vw;
+  margin-top: 2vh;
+  height: 5vh;
+  width: 5vh;
+  background-color: white;
+  color: black;
+  font-size: x-large;
+}
+
+.button:hover {
+  background-color: white;
+  color: grey;
+}
+
+.artist-text {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 15vw;
+  left: 82vw;
+  margin-right: 5vw;
+  bottom: 5vh;
+  gap: 2vh;
+}
+
+.artist-link {
+  background-color: white;
+  color: black;
+  font-family: sans-serif;
+  text-align: right;
+  font-size: medium;
+}
+
+.artist-link:hover {
+  background-color: white;
+  color: grey;
+}

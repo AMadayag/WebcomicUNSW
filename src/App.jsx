@@ -1,7 +1,7 @@
 import './App.css'
+import GalleryPage from './gallery/GalleryPage.jsx';
 import NavBar from './navBar/NavBar'
 import WCHome from './WCHome/WCHome.jsx';
-import Gallery from './gallery/Gallery'
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<WCHome />} />
-        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/gallery" element={<GalleryPage />} />
       </Routes>
     </>
   )
