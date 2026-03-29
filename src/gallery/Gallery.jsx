@@ -1,6 +1,6 @@
 import './Gallery.css'
 
-function Gallery() {
+function Gallery({ onImageClick }) {
   const gallery_images = Object.entries(
     import.meta.glob("/src/assets/gallery/*.png", { eager: true })
   );
@@ -23,7 +23,13 @@ function Gallery() {
       {rows.map((row, rowIndex) => (
         <div key={rowIndex} className='vertical-row'>
           {row.map(([path, module]) => (
-            <img key={path} src={module.default} alt='img' className='gallery-img' />
+            <img
+              key={path}
+              src={module.default}
+              onClick={() => onImageClick(module.default)}
+              alt='img'
+              className='gallery-img'
+            />
           ))}
         </div>
       ))}
