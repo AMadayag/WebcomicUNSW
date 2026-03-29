@@ -1,10 +1,7 @@
 import './Gallery.css'
+import { gallery_images } from './GalleryImages';
 
 function Gallery({ onImageClick }) {
-  const gallery_images = Object.entries(
-    import.meta.glob("/src/assets/gallery/*.png", { eager: true })
-  );
-
   const chunkArray = (arr, n) => // splits up gallery folder to chunks for rows
     Array.from({ length: n }, (_, i) => arr.filter((_, idx) => idx % n === i)
   );

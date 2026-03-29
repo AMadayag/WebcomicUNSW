@@ -50,3 +50,14 @@ img {
   background-color: white;
   color: grey;
 }
+
+.left-right-btns {
+  position: absolute;
+  height: 10vh;
+  width: 100vw;
+  margin-top: 38vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80vw;
+}
