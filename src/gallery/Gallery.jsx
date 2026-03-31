@@ -11,7 +11,7 @@ function Gallery({ onImageClick }) {
   return (
     <div className='gallery-container'>
       <div className='vertical-row-text'>
-        <a>Gallery</a>
+        <a><h2>Gallery</h2></a>
         <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Donec convallis leo dolor. Donec ullamcorper odio sed maximus feugiat.
           Sed id ligula fermentum, gravida diam ac, ornare leo. In aliquam
