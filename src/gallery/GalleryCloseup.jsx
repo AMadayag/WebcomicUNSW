@@ -41,9 +41,7 @@ function GalleryCloseup({ img_src, onClose }) {
       index = index - 1;
     }
 
-    console.log(index);
     updateDisplayImage(galleryImages[index]);
-    console.log(displayImage);
   }
 
   const imageRight = () => {
