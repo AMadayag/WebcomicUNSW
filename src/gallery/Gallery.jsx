@@ -12,10 +12,9 @@ function Gallery({ onImageClick }) {
     <div className='gallery-container'>
       <div className='vertical-row-text'>
         <a><h2>Gallery</h2></a>
-        <a>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Donec convallis leo dolor. Donec ullamcorper odio sed maximus feugiat.
-          Sed id ligula fermentum, gravida diam ac, ornare leo. In aliquam
-          placerat sem, vitae maximus ex dignissim nec.</a>
+        <a>Showing off all our wonderful artists and their
+          <b> delicious</b> work.</a>
+        <a>Everything you see here is made by society members!</a>
       </div>
       {rows.map((row, rowIndex) => (
         <div key={rowIndex} className='vertical-row'>
