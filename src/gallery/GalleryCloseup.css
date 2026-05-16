@@ -29,12 +29,10 @@ img {
 
 .artist-text {
   display: flex;
-  flex-direction: column;
   position: absolute;
   width: 15vw;
-  left: 82vw;
-  margin-right: 5vw;
-  bottom: 5vh;
+  right: 0;
+  bottom: 4.5vh;
   gap: 2vh;
 }
 
@@ -44,6 +42,7 @@ img {
   font-family: sans-serif;
   text-align: right;
   font-size: medium;
+  border-radius: 1vw;
 }
 
 .artist-link:hover {
