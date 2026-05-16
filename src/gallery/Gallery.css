@@ -8,6 +8,9 @@
   flex-direction: row;
   /* gap: 0vw; */
 }
+.gallery-container::-webkit-scrollbar {
+  display: none;
+}
 
 .vertical-row-text {
   padding-left: 3vw;
@@ -30,7 +33,7 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  width: 20vw;
+  width: 22vw;
   gap: 2vw;
 }
 
