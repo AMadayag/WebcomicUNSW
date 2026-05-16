@@ -6,7 +6,10 @@
   padding-right: 5vw;
   display: flex;
   flex-direction: row;
-  gap: 1vw;
+  /* gap: 0vw; */
+}
+.gallery-container::-webkit-scrollbar {
+  display: none;
 }
 
 .vertical-row-text {
@@ -29,9 +32,9 @@
   padding-top: 2vh;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 20vw;
-  gap: 2vh;
+  align-items: start;
+  width: 22vw;
+  gap: 2vw;
 }
 
 .gallery-img {
