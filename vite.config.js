@@ -6,6 +6,6 @@ import { cloudflare } from "@cloudflare/vite-plugin";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/WebcomicUNSW",
+  base: process.env.CF_PAGES ? "/" : "/WebcomicUNSW",
   plugins: [react(), babel({ presets: [reactCompilerPreset()] }), cloudflare()],
 })
