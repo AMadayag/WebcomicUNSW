@@ -1,9 +1,10 @@
+import Heading from './Heading'
 import './WCHome.css'
 
 function WCHome() {
 
   return (
-    <div>Homepage placeholder</div>
+    <Heading></Heading>
   )
 }
 

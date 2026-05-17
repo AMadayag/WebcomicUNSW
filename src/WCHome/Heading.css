@@ -1,0 +1,25 @@
+@font-face {
+    font-family: inter;
+    src: url('src/fonts/Inter-VariableFont_opsz,wght.ttf');
+}
+
+body {
+    font-family: inter;
+    overflow-y: scroll;
+}
+
+.header {
+    width: 70vw;
+    height: 45vh;
+    padding: 3vh 15vw;
+    margin: 5vh 0 0 0;
+}
+
+.comic-panel-1 {
+    height: 10vh;
+}
+
+.comic-panel-2 {
+    padding-left: 5vw;
+    height: 10vh;
+}
