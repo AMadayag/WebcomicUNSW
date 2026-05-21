@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import './Gallery.css'
 import { gallery_images, getAllImages } from '../mongodb/GalleryImages';
+import Loading from './Loading';
 
 function Gallery({ onImageClick }) {
   const [galleryImgs, setGalleryImgs] = useState([])
+  const [loading, setLoading] = useState(true)
 
-  const chunkArray = (arr, n) => // splits up gallery folder to chunks for rows
-    Array.from({ length: n }, (_, i) => arr.filter((_, idx) => idx % n === i)
-  );
+  const chunkArray = (arr, n) =>
+    Array.from({ length: n }, (_, i) => arr.filter((_, idx) => idx % n === i));
 
   useEffect(() => {
     const fetchImgs = async () => {
@@ -17,11 +18,11 @@ function Gallery({ onImageClick }) {
       } else {
         setGalleryImgs(imgs)
       }
+      setLoading(false)
     }
     fetchImgs()
   }, [])
 
-  // const rows = chunkArray(gallery_images, 3)
   const rows = chunkArray(galleryImgs, 3)
 
   return (
@@ -32,7 +33,7 @@ function Gallery({ onImageClick }) {
           <b> delicious</b> work.</a>
         <a>Everything you see here is made by society members!</a>
       </div>
-      {rows.map((row, rowIndex) => (
+      {loading ? <Loading /> : rows.map((row, rowIndex) => (
         <div key={rowIndex} className='vertical-row'>
           {row.map((url) => (
             <img
