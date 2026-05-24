@@ -12,7 +12,25 @@ body {
     width: 70vw;
     height: 45vh;
     padding: 3vh 15vw;
-    margin: 5vh 0 0 0;
+    margin: 2vh 0 0 0;
+}
+
+.panel1 {
+    /* position: absolute; */
+    height: 30vh;
+}
+
+.speech-bubble-big {
+    height: 10vh;
+}
+
+.banner {
+    position: absolute;
+}
+
+.banner-text {
+    position: absolute;
+    /* translate: 40px -100px; */
 }
 
 .comic-panel-1 {
