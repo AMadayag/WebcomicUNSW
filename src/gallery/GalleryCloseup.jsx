@@ -8,13 +8,13 @@ function GalleryCloseup({ img_src, onClose }) {
   const [galleryImages, setGalleryImages] = useState([]);
   let [displayImage, updateDisplayImage] = useState(img_src);
 
-  useEffect(() => { // image fetch
+  useEffect(() => {
     getAllImages().then(imgs => {
       if (imgs) setGalleryImages(imgs);
     });
   }, []);
 
-  useEffect(() => { // triggers onClose when esc key pressed
+  useEffect(() => {
     const handleKeyPress = (event) => {
       if (event.key === 'Escape') {
         onClose()
@@ -26,10 +26,7 @@ function GalleryCloseup({ img_src, onClose }) {
     };
 
     window.addEventListener('keydown', handleKeyPress)
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyPress)
-    };
+    return () => window.removeEventListener('keydown', handleKeyPress)
   }, [onClose, displayImage, galleryImages])
 
   const imageLeft = () => {
@@ -46,19 +43,24 @@ function GalleryCloseup({ img_src, onClose }) {
 
   return (
     <>
-      <button className='button' onClick={onClose}><IoCloseSharp /></button>
-      <div className='left-right-btns'>
-        <button className='artist-link' onClick={imageLeft}><FaAngleLeft /></button>
-        <button className='artist-link' onClick={imageRight}><FaAngleRight /></button>
-      </div>
+      <button className='closeup-close-btn' onClick={onClose}>
+        <IoCloseSharp />
+      </button>
+
       <div className='closeup-container'>
-        <img
-          src={displayImage}
-          alt='img'
-        />
-        <div className='artist-text'>
-          <button className='artist-link'>Check Out the Artist!</button>
-        </div>
+        <button className='nav-btn nav-btn-left' onClick={imageLeft}>
+          <FaAngleLeft />
+        </button>
+
+        <img src={displayImage} alt='img' className='closeup-img' />
+
+        <button className='nav-btn nav-btn-right' onClick={imageRight}>
+          <FaAngleRight />
+        </button>
+      </div>
+
+      <div className='artist-text'>
+        <button className='artist-link'>Check Out the Artist!</button>
       </div>
     </>
   )
