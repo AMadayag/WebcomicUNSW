@@ -1,48 +1,81 @@
 .closeup-container {
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   height: 92vh;
   width: 100vw;
+  position: relative;
 }
 
-img {
-  height: 90%;
-  max-width: 90%;
+.closeup-img {
+  max-height: 90%;
+  max-width: 80%;
+  object-fit: contain;
 }
 
-.button {
-  position: absolute;
-  margin-left: 95vw;
-  margin-top: 2vh;
+/* Close button — top right corner */
+.closeup-close-btn {
+  position: fixed;
+  top: calc(8vh + 1vh);
+  right: 2vw;
+  z-index: 200;
   height: 5vh;
   width: 5vh;
   background-color: white;
   color: black;
   font-size: x-large;
+  border: none;
+  cursor: pointer;
 }
 
-.button:hover {
+.closeup-close-btn:hover {
   background-color: white;
   color: grey;
 }
 
-.artist-text {
-  display: flex;
+/* Left / right nav buttons — anchored to sides of the container */
+.nav-btn {
   position: absolute;
-  width: 15vw;
-  right: 0;
-  bottom: 4.5vh;
-  gap: 2vh;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  padding: 1vh 1vw;
+  z-index: 10;
+}
+
+.nav-btn:hover {
+  color: grey;
+}
+
+.nav-btn-left {
+  left: 2vw;
+}
+
+.nav-btn-right {
+  right: 2vw;
+}
+
+/* Artist link — bottom right */
+.artist-text {
+  position: fixed;
+  bottom: 4vh;
+  right: 2vw;
+  z-index: 200;
 }
 
 .artist-link {
   background-color: white;
   color: black;
   font-family: sans-serif;
-  text-align: right;
   font-size: medium;
-  border-radius: 1vw;
+  border-radius: 0.5rem;
+  padding: 0.5vh 1vw;
+  border: none;
+  cursor: pointer;
 }
 
 .artist-link:hover {
@@ -50,13 +83,67 @@ img {
   color: grey;
 }
 
-.left-right-btns {
-  position: absolute;
-  height: 10vh;
-  width: 100vw;
-  margin-top: 38vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 80vw;
+/* Mobile */
+@media (max-width: 768px) {
+  .closeup-container {
+    padding: 8vh 10vw;
+    box-sizing: border-box;
+  }
+
+  .closeup-img {
+    max-width: 80vw;
+    max-height: 70vh;
+    object-fit: contain;
+  }
+
+  .closeup-close-btn {
+    top: calc(6vh + 1vh);
+    right: 4vw;
+
+    width: 44px;
+    height: 44px;
+
+    background: transparent;
+    border: none;
+
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .nav-btn {
+    font-size: 1.5rem;
+    padding: 1vh 2vw;
+
+    background: transparent;
+    border: none;
+
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .nav-btn:hover,
+  .nav-btn:focus,
+  .nav-btn:active,
+  .closeup-close-btn:hover,
+  .closeup-close-btn:focus,
+  .closeup-close-btn:active {
+    background: transparent;
+  }
+
+  .nav-btn-left {
+    left: 1vw;
+  }
+
+  .nav-btn-right {
+    right: 1vw;
+  }
+
+  .artist-text {
+    bottom: 2vh;
+    right: 3vw;
+  }
+
+  .artist-link {
+    font-size: small;
+    padding: 0.75vh 3vw;
+    border-radius: 0.4rem;
+  }
 }
