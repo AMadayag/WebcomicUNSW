@@ -2,7 +2,7 @@ import { apiUrl } from "./mongodb";
 
 export const gallery_images = [];
 
-const CACHE_KEY = 'gallery_images_cache_';
+const CACHE_KEY = 'gallery_images_cac_';
 const CACHE_DURATION = 1000 * 60 * 60; // 1 hour
 
 export async function getAllImages() {
