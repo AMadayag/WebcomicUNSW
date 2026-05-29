@@ -2,17 +2,23 @@ import './GalleryCloseup.css'
 import React, { useEffect, useState } from 'react';
 import { IoCloseSharp } from "react-icons/io5";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
-import { getAllImages } from '../mongodb/GalleryImages';
+import { getAllImages, getArtistLinkFromImage, getUsernameFromImage } from '../services/GalleryImages';
 
 function GalleryCloseup({ img_src, onClose }) {
   const [galleryImages, setGalleryImages] = useState([]);
   let [displayImage, updateDisplayImage] = useState(img_src);
+  let [byArtist, updateByArtist] = useState(null);
 
   useEffect(() => {
     getAllImages().then(imgs => {
       if (imgs) setGalleryImages(imgs);
     });
   }, []);
+
+  useEffect(() => {
+    updateByArtist(null);
+    getUsernameFromImage(displayImage).then(name => updateByArtist(name));
+  }, [displayImage]);
 
   useEffect(() => {
     const handleKeyPress = (event) => {
@@ -41,6 +47,10 @@ function GalleryCloseup({ img_src, onClose }) {
     updateDisplayImage(galleryImages[index]);
   }
 
+  const handleCheckOutTheArtist = async () => {
+    window.open(await getArtistLinkFromImage(displayImage), '_blank', 'noopener,noreferrer');
+  }
+
   return (
     <>
       <button className='closeup-close-btn' onClick={onClose}>
@@ -60,7 +70,10 @@ function GalleryCloseup({ img_src, onClose }) {
       </div>
 
       <div className='artist-text'>
-        <button className='artist-link'>Check Out the Artist!</button>
+        {byArtist &&
+          <p className='artist-link' onClick={handleCheckOutTheArtist}>Made by {byArtist}</p>
+        }
+        <button className='artist-link' onClick={handleCheckOutTheArtist}>Check out the artist!</button>
       </div>
     </>
   )

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './Gallery.css'
-import { gallery_images, getAllImages } from '../mongodb/GalleryImages';
 import Loading from './Loading';
+import { gallery_images, getAllImages } from '../services/GalleryImages';
 
 function Gallery({ onImageClick }) {
   const [galleryImgs, setGalleryImgs] = useState([])
