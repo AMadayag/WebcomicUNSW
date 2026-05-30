@@ -1,4 +1,3 @@
-import './App.css'
 import Blog from './blog/blog.jsx';
 import CreatePost from './blog/CreatePost.jsx';
 import GalleryPage from './gallery/GalleryPage.jsx';

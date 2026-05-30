@@ -2,6 +2,10 @@ body {
   margin: 0;
 }
 
+:root {
+  font-family: sans-serif;
+}
+
 /* :root {
   --text: #6b6375;
   --text-h: #08060d;
