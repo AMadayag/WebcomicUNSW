@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './Gallery.css'
-import Loading from './Loading';
+import Loading from '../utils/Loading';
 import { gallery_images, getAllImages } from '../services/GalleryImages';
 
 function Gallery({ onImageClick }) {
