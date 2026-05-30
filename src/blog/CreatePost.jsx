@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import './CreatePost.css'
+import { postToBlog } from '../services/BlogPosts';
+import { useNavigate } from 'react-router-dom';
 
 function CreatePost() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     title: '',
     author: '',
@@ -16,11 +19,10 @@ function CreatePost() {
   };
 
   const handleSubmit = () => {
-    const payload = {
-      ...formData,
-      tags: formData.tags.split(',').map(tag => tag.trim()).filter(Boolean)
-    };
-    //    
+    const { author, title, description, text } = formData;
+    const tags = formData.tags.split(',').map(tag => tag.trim()).filter(Boolean);
+    postToBlog(author, title, tags, description, text);
+    navigate('/blog')
   };
 
   return (

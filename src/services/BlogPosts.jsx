@@ -1,6 +1,6 @@
 import { apiUrl } from "./VercelApi";
 
-const CACHE_KEY = 'blog_summaries_cache';
+const CACHE_KEY = 'blog_summaries';
 const CACHE_DURATION = 1000 * 60 * 60; // 1 hour
 
 export async function postToBlog(author, title, tags, description, text) {
@@ -36,8 +36,7 @@ export async function getBlogSummaries() {
     const response = await fetch(`${apiUrl}/blog/summary`);
     const summariesData = await response.json();
     localStorage.setItem(CACHE_KEY, JSON.stringify({ summariesData, timestamp: Date.now() }));
-    console.log(summariesData)
-    return summariesData.json();
+    return summariesData;
   } catch (error) {
     console.error('Fetch error:', error);
   }
