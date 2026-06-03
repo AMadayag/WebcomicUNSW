@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
 
+  margin: 7vh 0;
   gap: 5vh;
 
   /* overflow-y: visible; */
@@ -11,15 +12,76 @@
 .blog-summary {
   display: flex;
   flex-direction: column;
-  gap: 3vh;
+  gap: 1vh;
 
   outline: 1px solid black;
   border-radius: 1vw;
   
   padding: 5vh;
-  margin-bottom: 7vh;
 
   height: auto;
-  min-height: 50vh;
+  min-height: 20vh;
   width: 85vw;
+}
+
+.title-date-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: larger;
+  font-weight: bold;
+  letter-spacing: 0.1vw;
+
+  cursor: pointer;
+}
+
+.author {
+  font-style: italic;
+}
+
+.tag-container {
+  margin-top: 1vh;
+  display: flex;
+  gap: 0.5vh;
+}
+
+.tag {
+  text-decoration: underline dotted #000000;
+  text-underline-offset: 1vh;
+}
+.tag:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #424242;
+}
+
+.description {
+  margin-top: 2vh;
+}
+
+.upvotes-comments-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1vw;
+}
+
+.post-btn {
+  display: flex;
+  position: fixed;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  height: 9vh;
+  width: 9vh;
+  border-radius: 7vh;
+  
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+
+  right: 5vh;
+  bottom: 5vh;
 }

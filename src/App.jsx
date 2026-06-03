@@ -1,4 +1,5 @@
 import Blog from './blog/blog.jsx';
+import BlogFull from './blog/BlogFull.jsx';
 import CreatePost from './blog/CreatePost.jsx';
 import GalleryPage from './gallery/GalleryPage.jsx';
 import NavBar from './navBar/NavBar'
@@ -15,6 +16,7 @@ function App() {
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/post" element={<CreatePost />} />
+        <Route path="/blog/:id" element={<BlogFull />} />
       </Routes>
     </>
   )

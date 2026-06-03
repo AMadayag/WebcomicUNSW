@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
 }
 
 .heading {
@@ -32,7 +32,9 @@
   overflow-y: visible;
 }
 
-textarea {
+input, textarea {
+  box-sizing: border-box;
+  width: 100%;
   resize: none;
 }
 
