@@ -33,18 +33,21 @@
   font-size: larger;
   font-weight: bold;
   letter-spacing: 0.1vw;
-
+}
+.title:hover {
   cursor: pointer;
+  color: gray;
 }
 
-.author {
+.author-summary {
   font-style: italic;
 }
 
 .tag-container {
   margin-top: 1vh;
   display: flex;
-  gap: 0.5vh;
+  gap: 0.7vh;
+  flex-wrap: wrap
 }
 
 .tag {
@@ -84,4 +87,18 @@
 
   right: 5vh;
   bottom: 5vh;
+}
+
+.blog-back-btn {
+  position: fixed;
+  color: black;
+  font-size: larger;
+  background-color: transparent;
+
+  margin-top: 2vh;
+  margin-left: 0.8vw;
+}
+.blog-back-btn:hover {
+  color: gray;
+  background-color: transparent;
 }
