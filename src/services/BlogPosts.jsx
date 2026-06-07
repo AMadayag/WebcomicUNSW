@@ -19,21 +19,32 @@ export async function postToBlog(author, title, tags, description, text) {
   }
 }
 
-export async function getBlogSummaries() {
+export async function getBlogSummaries(onUpdate) {
   const cached = localStorage.getItem(CACHE_KEY);
+  let cachedData = null;
+
   if (cached) {
     const { summariesData, timestamp } = JSON.parse(cached);
+    cachedData = summariesData;
+
     if (Date.now() - timestamp < CACHE_DURATION) return summariesData;
   }
 
-  try {
-    const response = await fetch(`${apiUrl}/blog/summary`);
-    const summariesData = await response.json();
-    localStorage.setItem(CACHE_KEY, JSON.stringify({ summariesData, timestamp: Date.now() }));
-    return summariesData;
-  } catch (error) {
-    console.error('Fetch error:', error);
-  }
+  // Fetch fresh data (awaited if no cache, background if stale)
+  const fetchPromise = fetch(`${apiUrl}/blog/summary`)
+    .then(res => res.json())
+    .then(summariesData => {
+      const isDifferent = JSON.stringify(summariesData) !== JSON.stringify(cachedData);
+      if (isDifferent) {
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ summariesData, timestamp: Date.now() }));
+        onUpdate?.(summariesData);
+      }
+      return summariesData;
+    })
+    .catch(err => console.error('Fetch error:', err));
+
+  // If we had stale cached data, return it immediately and revalidate in background
+  return cachedData ? cachedData : fetchPromise;
 }
 
 export async function getBlogFromId(id) {

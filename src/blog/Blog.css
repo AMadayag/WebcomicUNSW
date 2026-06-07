@@ -102,3 +102,10 @@
   color: gray;
   background-color: transparent;
 }
+
+.tag-title {
+  margin-top: 5vh;
+  justify-self: center;
+  font-size: large;
+  font-style: italic;
+}
