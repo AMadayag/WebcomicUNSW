@@ -9,35 +9,49 @@ body {
 }
 
 .header {
-    width: 70vw;
-    height: 45vh;
-    padding: 3vh 15vw;
-    margin: 2vh 0 0 0;
+    padding: 3vh 0vw;
+    margin: 2vh 0 0 8vw;
 }
 
 .panel1 {
-    /* position: absolute; */
-    height: 30vh;
+    height: 50vh;
+    position: relative;
+    z-index: -2;
 }
 
-.speech-bubble-big {
-    height: 10vh;
+.comic-panel-1 {
+    height: 450px;
 }
 
 .banner {
+    display: grid;
+    position: relative;
+}
+
+.speech-bubble-big {
     position: absolute;
+    height: 127px;
+    translate: 25vw -50vh;
+    grid-area: 1/1;
+    z-index: 1;
 }
 
 .banner-text {
     position: absolute;
-    /* translate: 40px -100px; */
-}
-
-.comic-panel-1 {
-    height: 10vh;
+    font-size: 210%;
+    translate: 30vw -50vh;
+    grid-area: 1/1;
+    z-index: 2;
 }
 
 .comic-panel-2 {
-    padding-left: 5vw;
-    height: 10vh;
+    position: absolute;
+    translate: 0vw -30vh;
+    height: 450px;
+    z-index: -1;
+}
+
+.speech-bubble-small {
+    height: 127px;
+    translate: 50vw -25vh;
 }
