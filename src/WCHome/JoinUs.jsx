@@ -6,7 +6,7 @@ function JoinUs() {
         <div>
             <h1>JOIN US</h1>
             <button type='button' className='signup-btn'>
-                <img src='src/WCHome/join-us-svgs/button.png' alt='join us button'></img>
+                <img src='./src/WCHome/join-us-svgs/button.png' alt='join us button'></img>
             </button>
         </div>
     </div>
