@@ -27,8 +27,8 @@
 
 .banner-text {
     position: absolute;
-    font-size: 210%;
-    translate: 30vw -50vh;
+    font-size: 190%;
+    translate: 27.8vw -50vh;
     grid-area: 1/1;
     z-index: 2;
 }
@@ -36,7 +36,7 @@
 .comic-panel-2 {
     position: absolute;
     translate: 0vw -30vh;
-    height: 450px;
+    height: 400px;
     z-index: -1;
 }
 
