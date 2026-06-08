@@ -1,0 +1,13 @@
+@font-face {
+    font-family: inter;
+    src: url('src/fonts/Inter-VariableFont_opsz,wght.ttf');
+}
+
+body {
+    font-family: inter;
+    overflow-y: scroll;
+}
+
+.header {
+    padding: 3vh 0;
+}

@@ -1,20 +1,9 @@
-@font-face {
-    font-family: inter;
-    src: url('src/fonts/Inter-VariableFont_opsz,wght.ttf');
+.heading {
+    margin: 0 0 0 5vw;
 }
 
-body {
-    font-family: inter;
-    overflow-y: scroll;
-}
-
-.header {
-    padding: 3vh 0vw;
-    margin: 2vh 0 0 8vw;
-}
-
-.panel1 {
-    height: 50vh;
+.panel {
+    height: 90vh;
     position: relative;
     z-index: -2;
 }

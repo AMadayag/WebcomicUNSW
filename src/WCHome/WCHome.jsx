@@ -1,10 +1,16 @@
+import Event from './Event'
 import Heading from './Heading'
+import JoinUs from './JoinUs'
 import './WCHome.css'
 
 function WCHome() {
 
   return (
-    <Heading></Heading>
+    <div className='header'>
+        <Heading></Heading>
+        <Event></Event>
+        <JoinUs></JoinUs>
+    </div>
   )
 }
 
