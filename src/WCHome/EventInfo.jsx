@@ -5,7 +5,7 @@ function EventInfo({description, link}) {
     <div className='info'>
         <p className='description'>{description}</p>
         <button type='button'>
-            <img src='./public/event-svgs/event-btn.svg' alt='event button' className='event-btn'></img>
+            <img src='./public/event-btn.svg' alt='event button' className='event-btn'></img>
         </button>
     </div>
   )
