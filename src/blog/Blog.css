@@ -91,6 +91,7 @@
 
 .blog-back-btn {
   position: fixed;
+  top: 8vh;
   color: black;
   font-size: larger;
   background-color: transparent;

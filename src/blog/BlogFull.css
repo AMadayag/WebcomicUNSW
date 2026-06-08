@@ -41,6 +41,11 @@
   align-items: center;
 }
 
+.comment-thread {
+  width: 100%;
+  margin-top: 7vh;
+}
+
 .add-comment-container {
   position: relative;
   display: flex;
@@ -67,7 +72,6 @@
 .add-a-comment {
   font-weight: bold;
   text-align: center;
-
   margin-bottom: 2vh;
 }
 
@@ -76,9 +80,9 @@
 }
 
 .add-comment-btn {
-  height: 5vh;
-  width: 8vw;
+  padding: 1.5vh 2vh;
   border-radius: 1vh;
+  align-self: flex-end;
 }
 
 .add-comment-close-btn {
@@ -109,11 +113,28 @@
 }
 
 .existing-comments {
-  margin-top: 7vh;
-  /* width: 50vw; */
+  display: flex;
+  flex-direction: column;
   width: 100%;
-
   outline: 1px solid black;
   border-radius: 1vw;
   padding: 3vh;
+}
+
+.replies-container {
+  margin-left: 3vw;
+  padding-left: 2vw;
+  border-left: 1.5px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5vh;
+}
+
+.replies-container .existing-comments {
+  margin-top: 3vh;
+}
+
+.replies-container .add-comment-container {
+  margin-top: 4vh;
 }

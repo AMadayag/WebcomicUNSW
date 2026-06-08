@@ -1,52 +1,52 @@
 import { useEffect, useState } from "react";
-import { addCommentToBlog, getBlogFromId, getBlogsByTag } from "../services/BlogPosts";
+import { addCommentToBlog, addReplyToComment, getBlogFromId } from "../services/BlogPosts";
 import Loading from "../utils/Loading";
 import { useParams } from 'react-router-dom';
 import BlogBackBtn from "./BlogBackBtn";
+import AddComment from "./AddComment";
 import "./BlogFull.css"
-import { IoCloseSharp } from "react-icons/io5";
+import "./Blog.css"
 
 function BlogFull() {
   const { id } = useParams();
 
-  const [blog, setBlog] = useState(null)
-  const [addComment, setAddComment] = useState(false)
-  const [loading, setLoading] = useState(true)
-  const [commentData, setCommentData] = useState({
-    name: '',
-    comment: ''
-  })
+  const [blog, setBlog] = useState(null);
+  const [addComment, setAddComment] = useState(false);
+  const [replyingTo, setReplyingTo] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function setBlogState() {
       const blog = await getBlogFromId(id);
-    
       setBlog(blog);
-      console.log(blog)
-      setLoading(false)
+      setLoading(false);
     }
     setBlogState();
-  }, []);
+  }, [id]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setCommentData(prev => ({ ...prev, [name]: value }));
-  };
-  
-  const handleSubmit = async () => {
-    setAddComment(false);
-    const { name, comment } = commentData;
-    await addCommentToBlog(name, comment, id);
+  const handleAddComment = async (name, text) => {
+    await addCommentToBlog(name, text, id);
     setBlog(prev => ({
       ...prev,
-      comments: [...prev.comments, { author: name, text: comment }]
+      comments: [...prev.comments, { author: name, text }]
     }));
-    setCommentData({ name: '', comment: '' });
-  }
+  };
+
+  const handleAddReply = async (name, text, commentId) => {
+    await addReplyToComment(name, text, id, commentId);
+    setBlog(prev => ({
+      ...prev,
+      comments: prev.comments.map(c =>
+        c._id === commentId
+          ? { ...c, replies: [...(c.replies ?? []), { author: name, text }] }
+          : c
+      )
+    }));
+  };
 
   return (
     <>
-      {loading ? <Loading /> :
+      {loading || !blog ? <Loading /> :
       <div>
         <BlogBackBtn />
         <div className="post-container">
@@ -70,36 +70,47 @@ function BlogFull() {
           <div className="divider"></div>
           <div className="comments-container">
             {addComment
-            ? <form className="add-comment-container" onSubmit={(e) => e.preventDefault()}>
-                <div className="add-a-comment">Add a comment</div>
-                <button className='add-comment-close-btn' onClick={() => {setAddComment(false)}}>
-                  <IoCloseSharp />
+              ? <AddComment
+                  title="Add a comment"
+                  onSubmit={handleAddComment}
+                  onClose={() => setAddComment(false)}
+                />
+              : <button className="add-comment-btn" onClick={() => setAddComment(true)}>
+                  Add a comment
                 </button>
-                <div className="comment-author-container">
-                  <div>Name:</div>
-                  <input name="name" value={commentData.name} onChange={handleChange}></input>
-                </div>
-                <div className="comment-text-container">
-                  <div>Comment:</div>
-                  <textarea name="comment" className="comment-text" value={commentData.comment} onChange={handleChange}></textarea>
-                </div>
-                <button className='submit-comment' onClick={handleSubmit}>Submit</button>
-              </form>
-            : <button className="add-comment-btn" onClick={() => {setAddComment(true)}}>Add a comment</button>
             }
             {blog.comments.map((j, index) => (
-              <div className='existing-comments' key={index}>
-                <strong>{j.author}</strong>
-                <p>{j.text}</p>
+              <div className='comment-thread' key={index}>
+                <div className='existing-comments'>
+                  <strong>{j.author}</strong>
+                  <p>{j.text}</p>
+                  <button className="add-comment-btn" onClick={() => setReplyingTo(replyingTo === j._id ? null : j._id)}>
+                    Reply
+                  </button>
+                </div>
+
+                <div className='replies-container'>
+                {j.replies?.map((reply, rIndex) => (
+                  <div className='existing-comments' key={rIndex}>
+                    <strong>{reply.author}</strong>
+                    <p>{reply.text}</p>
+                  </div>
+                ))}
+                  {replyingTo === j._id &&
+                    <AddComment
+                      title={`Replying to ${j.author}`}
+                      onSubmit={(name, text) => handleAddReply(name, text, j._id)}
+                      onClose={() => setReplyingTo(null)}
+                    />
+                  }
+                </div>
               </div>
             ))}
           </div>
-          
         </div>
       </div>}
     </>
-    
   );
 }
 
-export default BlogFull
+export default BlogFull;
