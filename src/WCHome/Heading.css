@@ -36,7 +36,7 @@
 .comic-panel-2 {
     position: absolute;
     translate: 0vw -30vh;
-    height: 350px;
+    height: 300px;
     z-index: -1;
 }
 
