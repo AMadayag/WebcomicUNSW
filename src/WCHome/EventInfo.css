@@ -1,10 +1,14 @@
 .info {
     width: 30vw;
     padding: 0 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .description {
     font-size: 150%;
+    margin: 0 0 1vh 0;
 }
 
 .event-btn {
