@@ -1,0 +1,16 @@
+/* Events */
+.events {
+    margin: 0 3vw;
+    height: 90vh;
+}
+
+.event-info {
+    margin: 0 6vw;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+}

@@ -1,0 +1,46 @@
+.heading {
+    margin: 0 0 0 5vw;
+}
+
+.panel {
+    height: 90vh;
+    position: relative;
+    z-index: -2;
+}
+
+.comic-panel-1 {
+    height: 450px;
+}
+
+.banner {
+    display: grid;
+    position: relative;
+}
+
+.speech-bubble-big {
+    position: absolute;
+    height: 127px;
+    translate: 25vw -50vh;
+    grid-area: 1/1;
+    z-index: 1;
+}
+
+.banner-text {
+    position: absolute;
+    font-size: 210%;
+    translate: 30vw -50vh;
+    grid-area: 1/1;
+    z-index: 2;
+}
+
+.comic-panel-2 {
+    position: absolute;
+    translate: 0vw -30vh;
+    height: 450px;
+    z-index: -1;
+}
+
+.speech-bubble-small {
+    height: 127px;
+    translate: 50vw -25vh;
+}
