@@ -1,9 +1,14 @@
-// import './JoinUs.css'
+import './JoinUs.css'
 
 function JoinUs() {
   return (
     <div className='signup'>
-            
+        <div>
+            <h1>JOIN US</h1>
+            <button type='button' className='signup-btn'>
+                <img src='src/WCHome/join-us-svgs/button.png' alt='join us button'></img>
+            </button>
+        </div>
     </div>
   )
 }
