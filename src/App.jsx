@@ -1,4 +1,4 @@
-import Blog from './blog/blog.jsx';
+import Blog from './blog/Blog.jsx';
 import BlogFull from './blog/BlogFull.jsx';
 import CreatePost from './blog/CreatePost.jsx';
 import GalleryPage from './gallery/GalleryPage.jsx';
