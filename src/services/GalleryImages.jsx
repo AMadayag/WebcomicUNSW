@@ -8,15 +8,15 @@ const CACHE_DURATION = 1000 * 60 * 60; // 1 hour
 export async function getAllImages() {
   const cached = localStorage.getItem(CACHE_KEY);
   if (cached) {
-    const { data, timestamp } = JSON.parse(cached);
-    if (Date.now() - timestamp < CACHE_DURATION) return data;
+    const { galleryData, timestamp } = JSON.parse(cached);
+    if (Date.now() - timestamp < CACHE_DURATION) return galleryData;
   }
 
   try {
     const response = await fetch(`${apiUrl}/gallery/images/all`);
-    const data = await response.json();
-    localStorage.setItem(CACHE_KEY, JSON.stringify({ data, timestamp: Date.now() }));
-    return data;
+    const galleryData = await response.json();
+    localStorage.setItem(CACHE_KEY, JSON.stringify({ galleryData, timestamp: Date.now() }));
+    return galleryData;
   } catch (error) {
     console.error('Fetch error:', error);
   }

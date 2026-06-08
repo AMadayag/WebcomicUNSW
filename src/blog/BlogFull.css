@@ -1,0 +1,140 @@
+.post-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10vh 20vh;
+  gap: 2vh;
+}
+
+.text {
+  white-space: pre-wrap;
+  margin-top: 5vh;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.author {
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+}
+
+.notes-container {
+  margin: 0 auto;
+  width: 50vw;
+  margin-bottom: 5vh;
+}
+
+.divider {
+  background-color: black;
+  width: 80vw;
+  height: 0.2vh;
+  margin: 5vh 0;
+}
+
+.comments-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-thread {
+  width: 100%;
+  margin-top: 7vh;
+}
+
+.add-comment-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+
+  width: 30vw;
+  outline: 1px solid black;
+  border-radius: 1vw;
+  padding: 4vh 5vh;
+}
+
+.comment-author-container {
+  display: flex;
+  gap: 2vh;
+}
+
+.comment-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.add-a-comment {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2vh;
+}
+
+.comment-text {
+  height: 20vh;
+}
+
+.add-comment-btn {
+  padding: 1.5vh 2vh;
+  border-radius: 1vh;
+  align-self: flex-end;
+}
+
+.add-comment-close-btn {
+  position: absolute;
+  top: 1vh;
+  right: 1vh;
+  left: auto;
+  z-index: 200;
+  height: 5vh;
+  width: 5vh;
+  background-color: transparent;
+  color: black;
+  font-size: larger;
+  border: none;
+  cursor: pointer;
+}
+.add-comment-close-btn:hover {
+  background-color: white;
+  color: grey;
+}
+
+.submit-comment {
+  align-self: center;
+  height: 5vh;
+  width: 5vw;
+  border-radius: 1vh;
+  margin-top: 1vh;
+}
+
+.existing-comments {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  outline: 1px solid black;
+  border-radius: 1vw;
+  padding: 3vh;
+}
+
+.replies-container {
+  margin-left: 3vw;
+  padding-left: 2vw;
+  border-left: 1.5px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5vh;
+}
+
+.replies-container .existing-comments {
+  margin-top: 3vh;
+}
+
+.replies-container .add-comment-container {
+  margin-top: 4vh;
+}
