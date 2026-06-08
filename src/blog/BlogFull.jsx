@@ -64,7 +64,7 @@ function BlogFull() {
           </div>
           <div className="notes-container">
             <div>description:</div>
-            <div className="description">{blog.description}</div>
+            <div className="description-text">{blog.description}</div>
           </div>
           <div className="text">{blog.text}</div>
           <div className="divider"></div>

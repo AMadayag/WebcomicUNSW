@@ -19,7 +19,7 @@ function BlogSummaries({ blogSummaries, handleTagClick }) {
             <div className='tag' key={j} onClick={() => {handleTagClick(j)}}>{j}</div>
           ))}
         </div>
-        <div className='description'>{i.description}</div>
+        <div className='description-text'>{i.description}</div>
         <div className='upvotes-comments-container'>
           {/* <div>{i.upvotes} <FaHeart /></div> */}
           <div>{i.comments} <FaCommentAlt /></div>
