@@ -1,11 +1,13 @@
 /* Events */
 .events {
-    margin: 0 3vw;
-    height: 90vh;
+    padding: 0 3vw;
+    width: 94vw;
+    /* height: 90vh; */
 }
 
 .event-info {
     margin: 0 6vw;
+    height: 100vh;
     display: flex;
     justify-content: space-between;
     text-align: center;
